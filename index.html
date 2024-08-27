@@ -20,18 +20,18 @@
     <form id="container">
       <h1>Contact Us</h1>
 
-      <h2>First Name *</h2>
+      <h2>First Name <span class="sinal">*</span></h2>
 
       <input type="text" name="firstName" id="firstName" class="square" />
 
-      <h2>Last Name *</h2>
+      <h2>Last Name <span class="sinal">*</span></h2>
 
       <input type="text" name="lastName" id="lastName" class="square" />
 
-      <h2>Email Address *</h2>
+      <h2>Email Address <span class="sinal">*</span></h2>
       <input type="email" name="email" id="email" class="square" />
 
-      <h2>Query Type *</h2>
+      <h2>Query Type <span class="sinal">*</span></h2>
 
       <div class="square radio">
         <input
@@ -41,7 +41,7 @@
           value="General Enquiry"
           class="squareCircle"
         />
-        <span>General Enquiry</span>
+        <label for="radio1">General Enquiry</label>
       </div>
 
       <div class="square radio">
@@ -51,18 +51,17 @@
           id="radio2"
           value="Support Request"
           class="squareCircle"
-        
         />
-        <span>Support Request</span>
+        <label for="radio2">Support Request</label>
       </div>
 
-      <h2>Message *</h2>
-      <input type="text" name="comment" id="comment" class="square" />
-      <br />
-      <input type="checkbox" name="consent" id="consent" value="consent" /> I
-      consent to being contacted by the team *
+      <h2>Message <span class="sinal">*</span></h2>
+      <textarea name="comment" id="comment" maxlength="430"></textarea>
 
-      <br />
+      <div id="consentArea">
+        <input type="checkbox" name="consent" id="consent" value="consent" />
+         <label for="consent">I consent to being contacted by the team <span class="sinal">*</span></label>
+      </div>
 
       <input type="submit" value="Submit" id="submit" class="square" />
     </form>

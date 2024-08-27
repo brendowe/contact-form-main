@@ -1,10 +1,20 @@
 @charset "UTF-8";
 
+:root {
+  --cor1:hsl(148, 38%, 91%);
+  --cor2:hsl(169, 82%, 27%);
+  --cor3: hsl(0, 66%, 54%);
+  --cor4: hsl(0, 0%, 100%);
+  --cor5: hsl(186, 15%, 59%);
+  --cor6: hsl(187, 24%, 22%);
+  
+}
+
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(203, 228, 166);
+  background-color: var(--cor1);
 }
 
 form {
@@ -15,6 +25,12 @@ form {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  margin: 20px 0;
+  color: var(--cor5);
+}
+
+h1 {
+  color: var(--cor6);
 }
 
 h2 {
@@ -44,5 +60,29 @@ h2 {
 }
 
 #comment {
-  height: 200px;
+  height: 180px;
+  width: 90%;
+  margin: auto;
+  border-radius: 10px;
+}
+
+#consentArea {
+  display: flex;
+  width: 90%;
+  margin: 20px auto;
+  font-size: 18px;
+}
+
+#consentArea input {
+  margin-right: 20px;
+}
+
+#submit {
+  background-color: var(--cor2);
+  color: var(--cor4);
+}
+
+.sinal {
+  color: var(--cor2);
+  font-size: 15px;
 }
