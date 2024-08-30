@@ -115,3 +115,7 @@ input:hover,
   border: 1px solid var(--cor2);
   outline: 0;
 }
+
+.erros {
+height: 1px;
+}

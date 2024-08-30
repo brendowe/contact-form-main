@@ -23,13 +23,16 @@
       <h2>First Name <span class="sinal">*</span></h2>
 
       <input type="text" name="firstName" id="firstName" class="square" />
+      <p class="erros" id="erroFName"></p>
 
       <h2>Last Name <span class="sinal">*</span></h2>
 
       <input type="text" name="lastName" id="lastName" class="square" />
+      <p class="erros" id="erroLName"></p>
 
       <h2>Email Address <span class="sinal">*</span></h2>
       <input type="email" name="email" id="email" class="square" />
+      <p class="erros"></p>
 
       <h2>Query Type <span class="sinal">*</span></h2>
 
@@ -53,14 +56,21 @@
           class="squareCircle"
         />
         <label for="radio2">Support Request</label>
+
+        <p class="erros"></p>
       </div>
 
       <h2>Message <span class="sinal">*</span></h2>
       <textarea name="comment" id="comment" maxlength="430"></textarea>
 
+      <p class="erros"></p>
+
       <div id="consentArea">
         <input type="checkbox" name="consent" id="consent" value="consent" />
-         <label for="consent">I consent to being contacted by the team <span class="sinal">*</span></label>
+        <label for="consent"
+          >I consent to being contacted by the team
+          <span class="sinal">*</span></label
+        >
       </div>
 
       <input type="submit" value="Submit" id="submit" class="square" />
