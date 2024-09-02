@@ -1,38 +1,62 @@
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
 
-
 const submit = document.getElementById("submit");
 
-submit.addEventListener("click", checkLastName);
+submit.addEventListener("click", chamar);
 
-function checkFirstName() {
+function chamar(event) {
+  checkFirstName(event);
+  checkLastName(event);
+  checkEmail(event)
+  checkMessage(event)
+}
+
+function checkFirstName(event) {
+  event.preventDefault();
+  let erro = document.getElementById("erroFName");
+
   if (firstName.value == "") {
-    let erro = document.getElementById('erroFName');
-    erro.innerHTML = 'oi';
+    erro.innerHTML = "This field is required";
   } else {
-    erro.innerHTML = 'dfdfd';
+    erro.innerHTML = "certo";
   }
 }
 
 function checkLastName(event) {
-  event.preventDefault()
+  event.preventDefault();
+  let erro = document.getElementById("erroLName");
   if (lastName.value == "") {
-    let erro = document.getElementById('erroLName');
-    erro.innerHTML = 'oi';
+    erro.innerHTML = "This field is required";
   } else {
-    erro.innerHTML = 'dfdfd';
+    erro.innerHTML = "certo";
   }
-  
 }
 
-function checkEmail() {
-  const email = document.getElementById('email');
+function checkEmail(event) {
+  event.preventDefault();
+  const email = document.getElementById("email");
   let mail = email.value;
-  if(mail.includes('@gmail.com') && mail.indexOf('@gmail.com') == mail.length - 10) {
-    alert('foi')
-    let 
+  let erro = document.getElementById("erroEmail");
+  if (
+    mail.includes("@gmail.com") &&
+    mail.indexOf("@gmail.com") == mail.length - 10
+  ) {
+    erro.innerHTML = "certo";
   } else {
-    alert('sddsd')
+    erro.innerHTML = "Pleas enter a valid email address";
+  }
+}
+
+function checkMessage(event) {
+  event.preventDefault();
+  const msg = document.getElementById('comment');
+  let erro = document.getElementById('erroMsg');
+  if (msg.value == '') {
+    erro.innerHTML = "This field is required";
+  } else if (msg.value.length < 10) {
+    erro.innerHTML = "Digite uma mensagem maior.";
+  } else {
+    erro.innerHTML = "certo";
   }
 }
