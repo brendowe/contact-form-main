@@ -20,15 +20,18 @@
     <form id="container">
       <h1>Contact Us</h1>
 
-      <h2>First Name <span class="sinal">*</span></h2>
-
-      <input type="text" name="firstName" id="firstName" class="square" />
-      <p class="erros" id="erroFName"></p>
-
-      <h2>Last Name <span class="sinal">*</span></h2>
-
-      <input type="text" name="lastName" id="lastName" class="square" />
-      <p class="erros" id="erroLName"></p>
+      <div id="areaName">
+        <div>
+          <h2>First Name <span class="sinal">*</span></h2>
+          <input type="text" name="firstName" id="firstName" class="square" />
+          <p class="erros" id="erroFName"></p>
+        </div>
+        <div>
+          <h2>Last Name <span class="sinal">*</span></h2>
+          <input type="text" name="lastName" id="lastName" class="square" />
+          <p class="erros" id="erroLName"></p>
+        </div>
+      </div>
 
       <h2>Email Address <span class="sinal">*</span></h2>
       <input type="email" name="email" id="email" class="square" />
@@ -36,30 +39,31 @@
 
       <h2>Query Type <span class="sinal">*</span></h2>
 
-      <div class="square radio">
-        <input
-          type="radio"
-          name="radio"
-          id="radio1"
-          value="General Enquiry"
-          class="squareCircle"
-        />
-        <label for="radio1">General Enquiry</label>
+      <div id="queryType">
+        <div class="square radio" id="sdd">
+          <input
+            type="radio"
+            name="radio"
+            id="radio1"
+            value="General Enquiry"
+            class="squareCircle"
+          />
+          <label for="radio1">General Enquiry</label>
+        </div>
+        <div class="square radio" id="sd">
+          <input
+            type="radio"
+            name="radio"
+            id="radio2"
+            value="Support Request"
+            class="squareCircle"
+          />
+          <label for="radio2">Support Request</label>
       </div>
 
-      <div class="square radio" id="sd">
-        <input
-          type="radio"
-          name="radio"
-          id="radio2"
-          value="Support Request"
-          class="squareCircle"
-        />
-        <label for="radio2">Support Request</label>
-
-        <p class="erros"></p>
+        
       </div>
-
+<p class="erros" id="erroRadio"></p>
       <h2>Message <span class="sinal">*</span></h2>
       <textarea name="comment" id="comment" maxlength="430"></textarea>
       <p class="erros" id="erroMsg"></p>
@@ -68,12 +72,17 @@
       <p class="erros"></p>
 
       <div id="consentArea">
-        <input type="checkbox" name="consent" id="consent" value="consent" />
-        <label for="consent"
-          >I consent to being contacted by the team
-          <span class="sinal">*</span></label
-        >
+        <div id="consentArea2">
+          <input type="checkbox" name="consent" id="consent" value="consent" />
+          <label for="consent"
+            >I consent to being contacted by the team
+            <span class="sinal">*</span></label
+          >
+        </div> 
+                  <p class="erros" id="erroConsent"></p>  
+
       </div>
+      
 
       <input type="submit" value="Submit" id="submit" class="square" />
     </form>

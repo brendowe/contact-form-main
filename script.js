@@ -8,8 +8,10 @@ submit.addEventListener("click", chamar);
 function chamar(event) {
   checkFirstName(event);
   checkLastName(event);
-  checkEmail(event)
-  checkMessage(event)
+  checkEmail(event);
+  checkMessage(event);
+  checkConsent(event);
+  checkRadio(event)
 }
 
 function checkFirstName(event) {
@@ -18,6 +20,7 @@ function checkFirstName(event) {
 
   if (firstName.value == "") {
     erro.innerHTML = "This field is required";
+    firstName.style.border = '2px solid red';
   } else {
     erro.innerHTML = "certo";
   }
@@ -28,6 +31,7 @@ function checkLastName(event) {
   let erro = document.getElementById("erroLName");
   if (lastName.value == "") {
     erro.innerHTML = "This field is required";
+    lastName.style.border = '2px solid red';
   } else {
     erro.innerHTML = "certo";
   }
@@ -45,7 +49,35 @@ function checkEmail(event) {
     erro.innerHTML = "certo";
   } else {
     erro.innerHTML = "Pleas enter a valid email address";
+    email.style.border = '2px solid red';
   }
+}
+
+function checkRadio(event) {
+  event.preventDefault();
+  const radio1 = document.getElementById('radio1');
+  const radio2 = document.getElementById('radio2');
+  let erro = document.getElementById('erroRadio');
+
+  if(radio1.checked == false && radio2.checked == false) {
+    erro.innerHTML = 'This field is required';
+  } else {
+    erro.innerHTML = 'Foi';
+  }
+
+}
+
+function checkConsent(event) {
+  event.preventDefault();
+  const consent = document.getElementById('consent');
+  let erro = document.getElementById('erroConsent');
+
+  if(consent.checked == true) {
+    erro.innerHTML = 'Foi';
+  } else {
+    erro.innerHTML = 'To submit this form, please consent to being contacted';
+  }
+
 }
 
 function checkMessage(event) {
@@ -54,6 +86,7 @@ function checkMessage(event) {
   let erro = document.getElementById('erroMsg');
   if (msg.value == '') {
     erro.innerHTML = "This field is required";
+    msg.style.border = '2px solid red';
   } else if (msg.value.length < 10) {
     erro.innerHTML = "Digite uma mensagem maior.";
   } else {

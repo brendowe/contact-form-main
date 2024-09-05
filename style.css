@@ -71,7 +71,6 @@ h2 {
 Não tem como utilizar isso para alterar a div principal. Vou mudar através do JS. Serve para treinar um pouco.
 */
 
-
 #comment {
   height: 180px;
   width: 90%;
@@ -84,6 +83,7 @@ Não tem como utilizar isso para alterar a div principal. Vou mudar através do 
   width: 90%;
   margin: 20px auto;
   font-size: 16px;
+  flex-direction: column;
 }
 
 #consentArea input {
@@ -95,6 +95,7 @@ Não tem como utilizar isso para alterar a div principal. Vou mudar através do 
   background-color: var(--cor2);
   color: var(--cor4);
   font-size: 16px;
+  margin-top: 20px;
 }
 
 .sinal {
@@ -117,5 +118,66 @@ input:hover,
 }
 
 .erros {
-height: 1px;
+  height: 1px;
+  color: red;
+  margin-left: 10px;
 }
+
+.erroBorda {
+  border: 2px solid red;
+}
+
+@media (min-width: 800px) {
+  form {
+    width: 30%;
+  }
+
+  #areaName {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+  }
+
+  #areaName input {
+    width: 270px;
+  }
+
+  #firstName {
+    margin-right: 10px;
+  }
+
+  #email {
+    width: 556px;
+  }
+
+  #queryType {
+    display: flex;
+  }
+
+  #queryType div {
+    width: 280px;    
+  }
+
+  #sdd {
+    margin-right: 10px;
+  }
+
+  #comment {
+    width: 556px;
+    height: 120px;
+  }
+
+  #consentArea {
+    width: 100%;
+    margin: 0;
+  }
+
+  #submit {
+    width: 556px;
+  }
+
+  .erros {
+    margin-left: 0;
+  }
+}
+
