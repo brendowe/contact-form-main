@@ -6,13 +6,26 @@ const submit = document.getElementById("submit");
 submit.addEventListener("click", chamar);
 
 function chamar(event) {
-  checkFirstName(event);
-  checkLastName(event);
+  checkConsent(event);  
   checkEmail(event);
-  checkMessage(event);
-  checkConsent(event);
-  checkRadio(event)
-}
+  checkFirstName(event); 
+  checkLastName(event); 
+  checkMessage(event); 
+  checkRadio(event); 
+  
+  if(checkConsent(event) && checkEmail(event) && checkFirstName(event) && checkLastName(event) && checkMessage(event) && checkRadio(event)) {
+    firstName.value = "";
+    lastName.value = "";
+    email.value = "";
+    document.getElementById('comment').value = "";
+    radio1.checked = false;
+    radio2.checked = false;
+    consent.checked = false;
+    launchSend()    
+    setTimeout(removeSend, 2000)
+  } 
+  }
+
 
 function checkFirstName(event) {
   event.preventDefault();
@@ -20,9 +33,10 @@ function checkFirstName(event) {
 
   if (firstName.value == "") {
     erro.innerHTML = "This field is required";
-    firstName.style.border = '2px solid red';
+    firstName.style.border = "2px solid red";
+    return false;
   } else {
-    erro.innerHTML = "certo";
+    return true;
   }
 }
 
@@ -31,9 +45,10 @@ function checkLastName(event) {
   let erro = document.getElementById("erroLName");
   if (lastName.value == "") {
     erro.innerHTML = "This field is required";
-    lastName.style.border = '2px solid red';
+    lastName.style.border = "2px solid red";
+    return false;
   } else {
-    erro.innerHTML = "certo";
+    return true;
   }
 }
 
@@ -46,50 +61,62 @@ function checkEmail(event) {
     mail.includes("@gmail.com") &&
     mail.indexOf("@gmail.com") == mail.length - 10
   ) {
-    erro.innerHTML = "certo";
+    return true;
   } else {
     erro.innerHTML = "Pleas enter a valid email address";
-    email.style.border = '2px solid red';
+    email.style.border = "2px solid red";
+    return false;
   }
 }
 
 function checkRadio(event) {
   event.preventDefault();
-  const radio1 = document.getElementById('radio1');
-  const radio2 = document.getElementById('radio2');
-  let erro = document.getElementById('erroRadio');
+  const radio1 = document.getElementById("radio1");
+  const radio2 = document.getElementById("radio2");
+  let erro = document.getElementById("erroRadio");
 
-  if(radio1.checked == false && radio2.checked == false) {
-    erro.innerHTML = 'This field is required';
+  if (radio1.checked == false && radio2.checked == false) {
+    erro.innerHTML = "This field is required";
+    return false;
   } else {
-    erro.innerHTML = 'Foi';
+    return true;
   }
-
 }
 
 function checkConsent(event) {
   event.preventDefault();
-  const consent = document.getElementById('consent');
-  let erro = document.getElementById('erroConsent');
+  const consent = document.getElementById("consent");
+  let erro = document.getElementById("erroConsent");
 
-  if(consent.checked == true) {
-    erro.innerHTML = 'Foi';
+  if (consent.checked == true) {
+    return true;
   } else {
-    erro.innerHTML = 'To submit this form, please consent to being contacted';
+    erro.innerHTML = "To submit this form, please consent to being contacted";
+    return false;
   }
-
 }
 
 function checkMessage(event) {
   event.preventDefault();
-  const msg = document.getElementById('comment');
-  let erro = document.getElementById('erroMsg');
-  if (msg.value == '') {
+  const msg = document.getElementById("comment");
+  let erro = document.getElementById("erroMsg");
+  if (msg.value == "") {
     erro.innerHTML = "This field is required";
-    msg.style.border = '2px solid red';
-  } else if (msg.value.length < 10) {
+    msg.style.border = "2px solid red";
+    return false;
+  } /*else if (msg.value.length < 10) {
     erro.innerHTML = "Digite uma mensagem maior.";
-  } else {
-    erro.innerHTML = "certo";
+  }*/ else {
+    return true;
   }
 }
+
+function launchSend() {
+  const send = document.getElementById("send");
+  send.style.display = "block";
+}
+
+function removeSend() {
+  send.style.display = "none";
+}
+

@@ -17,6 +17,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="send">
+      <h2>Message Sent!</h2>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
     <form id="container">
       <h1>Contact Us</h1>
 
@@ -59,15 +63,12 @@
             class="squareCircle"
           />
           <label for="radio2">Support Request</label>
+        </div>
       </div>
-
-        
-      </div>
-<p class="erros" id="erroRadio"></p>
+      <p class="erros" id="erroRadio"></p>
       <h2>Message <span class="sinal">*</span></h2>
       <textarea name="comment" id="comment" maxlength="430"></textarea>
       <p class="erros" id="erroMsg"></p>
-
 
       <p class="erros"></p>
 
@@ -78,11 +79,9 @@
             >I consent to being contacted by the team
             <span class="sinal">*</span></label
           >
-        </div> 
-                  <p class="erros" id="erroConsent"></p>  
-
+        </div>
+        <p class="erros" id="erroConsent"></p>
       </div>
-      
 
       <input type="submit" value="Submit" id="submit" class="square" />
     </form>
