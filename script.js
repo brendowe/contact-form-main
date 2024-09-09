@@ -1,31 +1,52 @@
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
+const msg = document.getElementById("comment");
 
 const submit = document.getElementById("submit");
 
 submit.addEventListener("click", chamar);
 
 function chamar(event) {
-  checkConsent(event);  
+  checkConsent(event);
   checkEmail(event);
-  checkFirstName(event); 
-  checkLastName(event); 
-  checkMessage(event); 
-  checkRadio(event); 
-  
-  if(checkConsent(event) && checkEmail(event) && checkFirstName(event) && checkLastName(event) && checkMessage(event) && checkRadio(event)) {
+  checkFirstName(event);
+  checkLastName(event);
+  checkMessage(event);
+  checkRadio(event);
+
+  if (
+    checkConsent(event) &&
+    checkEmail(event) &&
+    checkFirstName(event) &&
+    checkLastName(event) &&
+    checkMessage(event) &&
+    checkRadio(event)
+  ) {
+    
+    const cliente = new criarPessoa(firstName.value, lastName.value, email.value, msg.value, consent.checked, queryType.value)
+
+    console.log(cliente)
     firstName.value = "";
     lastName.value = "";
     email.value = "";
-    document.getElementById('comment').value = "";
+    document.getElementById("comment").value = "";
     radio1.checked = false;
     radio2.checked = false;
     consent.checked = false;
-    launchSend()    
-    setTimeout(removeSend, 2000)
-  } 
+    launchSend();
+    setTimeout(removeSend, 2000);   
+    
   }
+}
 
+function criarPessoa (firstName, lastName, email, msg, consent, queryType) {
+  this.firstName = firstName,
+  this.lastName = lastName,
+  this.email = email,
+  this.msg = msg,
+  this.consent = consent,
+  this.queryType = queryType
+}
 
 function checkFirstName(event) {
   event.preventDefault();
@@ -119,4 +140,3 @@ function launchSend() {
 function removeSend() {
   send.style.display = "none";
 }
-
