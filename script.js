@@ -13,6 +13,7 @@ function chamar(event) {
   checkLastName(event);
   checkMessage(event);
   checkRadio(event);
+  
 
   if (
     checkConsent(event) &&
@@ -32,7 +33,8 @@ function chamar(event) {
     document.getElementById("comment").value = "";
     radio1.checked = false;
     radio2.checked = false;
-    consent.checked = false;
+    consent.checked = false;    
+    resetColor();
     launchSend();
     setTimeout(removeSend, 2000);   
     
@@ -57,8 +59,16 @@ function checkFirstName(event) {
     firstName.style.border = "2px solid red";
     return false;
   } else {
+    erro.innerHTML = "";
     return true;
   }
+}
+
+function resetColor () {
+  firstName.style.border = "1px solid grey";
+  lastName.style.border = "1px solid grey";
+  email.style.border = "1px solid grey";
+  msg.style.border = "1px solid grey";
 }
 
 function checkLastName(event) {
@@ -69,6 +79,7 @@ function checkLastName(event) {
     lastName.style.border = "2px solid red";
     return false;
   } else {
+    erro.innerHTML = "";
     return true;
   }
 }
@@ -82,7 +93,8 @@ function checkEmail(event) {
     mail.includes("@gmail.com") &&
     mail.indexOf("@gmail.com") == mail.length - 10
   ) {
-    return true;
+    erro.innerHTML = "";
+    return true;    
   } else {
     erro.innerHTML = "Pleas enter a valid email address";
     email.style.border = "2px solid red";
@@ -100,6 +112,7 @@ function checkRadio(event) {
     erro.innerHTML = "This field is required";
     return false;
   } else {
+    erro.innerHTML = "";
     return true;
   }
 }
@@ -110,6 +123,7 @@ function checkConsent(event) {
   let erro = document.getElementById("erroConsent");
 
   if (consent.checked == true) {
+    erro.innerHTML = "";
     return true;
   } else {
     erro.innerHTML = "To submit this form, please consent to being contacted";
@@ -128,6 +142,7 @@ function checkMessage(event) {
   } /*else if (msg.value.length < 10) {
     erro.innerHTML = "Digite uma mensagem maior.";
   }*/ else {
+    erro.innerHTML = "";
     return true;
   }
 }
