@@ -24,9 +24,14 @@ function chamar(event) {
     checkRadio(event)
   ) {
     
-    const cliente = new criarPessoa(firstName.value, lastName.value, email.value, msg.value, consent.checked, queryType.value)
+    const cliente = new criarPessoa(firstName.value, lastName.value, email.value, msg.value, consent.checked, document.querySelector('input[name=radio]:checked').value)
 
-    console.log(cliente)
+    const clienteJson = JSON.stringify(cliente);
+
+    console.log(cliente);
+
+    console.log(clienteJson);
+    
     firstName.value = "";
     lastName.value = "";
     email.value = "";
