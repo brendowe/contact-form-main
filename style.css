@@ -145,20 +145,14 @@ input:hover,
 
   #areaName {
     display: flex;
-    flex-direction: row;
-    margin: auto;
   }
 
-  #areaName input {
-    width: 270px;
+  #areaName div {
+    width: 90%;
   }
 
   #firstName {
     margin-right: 10px;
-  }
-
-  #email {
-    width: 556px;
   }
 
   #queryType {
@@ -166,7 +160,7 @@ input:hover,
   }
 
   #queryType div {
-    width: 280px;    
+    width: 90%;    
   }
 
   #sdd {
@@ -174,7 +168,6 @@ input:hover,
   }
 
   #comment {
-    width: 556px;
     height: 120px;
   }
 
@@ -182,11 +175,7 @@ input:hover,
     width: 100%;
     margin: 0;
   }
-
-  #submit {
-    width: 556px;
-  }
-
+  
   .erros {
     margin-left: 0;
   }
@@ -194,5 +183,6 @@ input:hover,
   #send {
     width: 450px;
   }
+
 }
 

@@ -26,18 +26,24 @@
 
       <div id="areaName">
         <div>
-          <h2>First Name <span class="sinal">*</span></h2>
+          <label for="firstName">
+            <h2>First Name <span class="sinal">*</span></h2>
+          </label>
           <input type="text" name="firstName" id="firstName" class="square" />
           <p class="erros" id="erroFName"></p>
         </div>
         <div>
-          <h2>Last Name <span class="sinal">*</span></h2>
+          <label for="lastName">
+            <h2>Last Name <span class="sinal">*</span></h2>
+          </label>
           <input type="text" name="lastName" id="lastName" class="square" />
           <p class="erros" id="erroLName"></p>
         </div>
       </div>
 
-      <h2>Email Address <span class="sinal">*</span></h2>
+      <label for="email">
+        <h2>Email Address <span class="sinal">*</span></h2>
+      </label>
       <input type="email" name="email" id="email" class="square" />
       <p class="erros" id="erroEmail"></p>
 
@@ -66,7 +72,9 @@
         </div>
       </div>
       <p class="erros" id="erroRadio"></p>
-      <h2>Message <span class="sinal">*</span></h2>
+      <label for="comment">
+        <h2>Message <span class="sinal">*</span></h2>
+      </label>
       <textarea name="comment" id="comment" maxlength="430"></textarea>
       <p class="erros" id="erroMsg"></p>
 
