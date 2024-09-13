@@ -23,7 +23,6 @@ body {
 form {
   background-color: white;
   height: 90%;
-  width: 300px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -37,7 +36,7 @@ h1 {
   margin-left: 12px;
 }
 
-h2 {
+.title {
   font-size: 18px;
   margin-left: 15px;
 }
@@ -58,6 +57,10 @@ h2 {
   border: 1px solid grey;
   border-radius: 10px;
   margin: 0px 20px;
+}
+
+#email {
+  width: 90%;
 }
 
 .radio {
@@ -145,23 +148,30 @@ input:hover,
 
   #areaName {
     display: flex;
+    width: 100%;
+    margin: auto;
   }
 
   #areaName div {
-    width: 90%;
+    width: 100%;
   }
 
+
   #firstName {
-    margin-right: 10px;
+    width: 80%;
+  }
+
+  #lastName {
+    width: 80%;
   }
 
   #queryType {
     display: flex;
+    width: 90%;
+    margin: auto;
   }
 
-  #queryType div {
-    width: 90%;    
-  }
+ 
 
   #sdd {
     margin-right: 10px;
