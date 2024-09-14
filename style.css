@@ -139,6 +139,7 @@ input:hover,
   color: white;
   padding: 20px;
   width: 250px;
+  position: fixed;
 }
 
 @media (min-width: 800px) {
